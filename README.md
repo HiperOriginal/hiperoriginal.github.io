@@ -1,2 +1,2 @@
 # hiperoriginal.github.io
-Development site of HiperOriginal Project.
+Development site of HiperOriginal project.
