@@ -1,0 +1,43 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Displays a floating step by step tutorial linked to interface elements.
+##### Example:
+    <ho-tutorial></ho-tutorial>
+@element ho-tutorial
+@version 0.1.1
+@blurb Displays a floating step by step tutorial linked to interface elements.
+@status alpha
+@homepage http://hiperoriginal.github.io/components/ho-tutorial
+-->
+<polymer-element name="ho-tutorial" attributes="name">
+    <template>
+        <style>
+            :host {
+                font-family: sans-serif;
+            }
+        </style>
+        Hello {{name}}! I'm version 0.1.1
+    </template>
+    <script>
+        Polymer('ho-tutorial', {
+            /**
+             * The name of the person you want to say hello to.
+             * @attribute name
+             * @type string
+             * @default "Ho Tutorial"
+             */
+            name: 'Ho Tutorial',
+            /**
+             * The `aProp` is a property that does something cool.
+             *
+             * @property aProp
+             * @type bool
+             */
+            aProp: false,
+            ready: function() {
+
+            }
+        });
+    </script>
+</polymer-element>
