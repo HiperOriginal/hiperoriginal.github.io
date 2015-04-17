@@ -1,0 +1,30 @@
+{
+  "name": "hiperoriginal.github.io",
+  "version": "0.1.0",
+  "homepage": "https://github.com/HiperOriginal",
+  "authors": [
+    "Leo Batista <leobatista021@gmail.com>"
+  ],
+  "description": "Development site of HiperOriginal project.",
+  "main": "index.html",
+  "keywords": [
+    "HiperOriginal",
+    "ho",
+    "development",
+    "developers"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  }
+}
