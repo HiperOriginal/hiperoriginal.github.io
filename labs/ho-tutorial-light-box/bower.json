@@ -1,0 +1,21 @@
+{
+  "name": "ho-tutorial-light-box",
+  "version": "0.0.1",
+  "homepage": "https://github.com/HiperOriginal/hiperoriginal.github.io",
+  "authors": [
+    "Yoseph Santos <yosephcsantos@gmail.com>"
+  ],
+  "description": "light box of ho-tutorial",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-dialog": "Polymer/paper-dialog#^0.5"
+  }
+}
