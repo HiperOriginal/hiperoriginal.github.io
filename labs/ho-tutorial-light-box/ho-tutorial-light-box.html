@@ -17,130 +17,128 @@
 		}
 	</style>
     <template>
-    	<div layout horizontal center>
-	    	<template repeat="{{d in dialog}}">
-		    	
-		    	<paper-action-dialog heading="{{d.title}}" opened >
-		            <style type="text/css">
-		                paper-button[raised].colored{
-	                        color:white;
-	                        padding: 15px;
-	                        font-size: 14px;
-	                        border-radius: 2px;
-	                        margin: 5px;
-	                        cursor: pointer;
-	                    }
-	                    paper-button[raised].colored.colored--orange{
-	                        background-color: #fc7800;
-	                        border-color: #fc7800;
-	                    }
-	                    paper-button[raised].colored.colored--gray{
-	                        background-color: #70797F;
-	                        border-color: #70797F;
-	                    }
-	                    paper-button[raised].colored .chevron::before {
-	                        border-style: solid;
-	                        border-width: 0.25em 0.25em 0 0;
-	                        content: '';
-	                        display: inline-block;
-	                        height: 0.45em;
-	                        left: 0.15em;
-	                        position: relative;
-	                        top: 0.15em;
-	                        transform: rotate(-45deg);
-	                        vertical-align: top;
-	                        width: 0.45em;
-	                    }
-	                    paper-button[raised].colored .chevron.right:before {
-	                        left: 0;
-	                        font-size: 20px;
-	                        font-weight: bold;
-	                        vertical-align: baseline;
-	                        margin-left: 10px;
-	                        transform: rotate(45deg);
-	                    }
-	                    paper-button[raised].colored .chevron.left:before {
-	                        font-size: 20px;
-	                        font-weight: bold;
-	                        vertical-align: baseline;
-	                        margin-right: 10px;
-	                        transform: rotate(45deg);
-	                        left: 0.25em;
-	                        transform: rotate(-135deg);
-	                    }
-	                    p.ho-text{
-	                          font-size: 16px;
-	                          font-weight: normal;
-	                          line-height: 1.5;
-	                          color: #38454d;
-	                    }
-	                    span.close{
-							position: absolute;
-							top: 8px;
-							right: 7px;
-							display: inline-block;
-							width: 16px;
-							height: 16px;
-							overflow: hidden;
-							cursor: pointer;
+    	<template repeat="{{d in dialog}}">
+	    	
+	    	<paper-action-dialog heading="{{d.title}}" opened >
+	            <style type="text/css">
+	                paper-button[raised].colored{
+                        color:white;
+                        padding: 15px;
+                        font-size: 14px;
+                        border-radius: 2px;
+                        margin: 5px;
+                        cursor: pointer;
+                    }
+                    paper-button[raised].colored.colored--orange{
+                        background-color: #fc7800;
+                        border-color: #fc7800;
+                    }
+                    paper-button[raised].colored.colored--gray{
+                        background-color: #70797F;
+                        border-color: #70797F;
+                    }
+                    paper-button[raised].colored .chevron::before {
+                        border-style: solid;
+                        border-width: 0.25em 0.25em 0 0;
+                        content: '';
+                        display: inline-block;
+                        height: 0.45em;
+                        left: 0.15em;
+                        position: relative;
+                        top: 0.15em;
+                        transform: rotate(-45deg);
+                        vertical-align: top;
+                        width: 0.45em;
+                    }
+                    paper-button[raised].colored .chevron.right:before {
+                        left: 0;
+                        font-size: 20px;
+                        font-weight: bold;
+                        vertical-align: baseline;
+                        margin-left: 10px;
+                        transform: rotate(45deg);
+                    }
+                    paper-button[raised].colored .chevron.left:before {
+                        font-size: 20px;
+                        font-weight: bold;
+                        vertical-align: baseline;
+                        margin-right: 10px;
+                        transform: rotate(45deg);
+                        left: 0.25em;
+                        transform: rotate(-135deg);
+                    }
+                    p.ho-text{
+                          font-size: 16px;
+                          font-weight: normal;
+                          line-height: 1.5;
+                          color: #38454d;
+                    }
+                    span.close{
+						position: absolute;
+						top: 8px;
+						right: 7px;
+						display: inline-block;
+						width: 16px;
+						height: 16px;
+						overflow: hidden;
+						cursor: pointer;
+					}
+					span.close:hover {
+						    span.close::before, span.close::after {
+						      background: black;
+						    }
 						}
-						span.close:hover {
-							    span.close::before, span.close::after {
-							      background: black;
-							    }
-							}
-						span.close::before, span.close::after {
-							    content: '';
-							    position: absolute;
-							    height: 2px;
-							    width: 100%;
-							    top: 50%;
-							    left: 0;
-							    margin-top: -1px;
-							    background: #7e9599;
-							}
-							span.close::before {
-							    transform: rotate(45deg);
-							}
-							span.close::after {
-							    transform: rotate(-45deg);
-							  }
-							span.close.black {
-							    span.close::before, span.close::after {
-							      height: 8px;
-							      margin-top: -4px;
-							    }
-							}
+					span.close::before, span.close::after {
+						    content: '';
+						    position: absolute;
+						    height: 2px;
+						    width: 100%;
+						    top: 50%;
+						    left: 0;
+						    margin-top: -1px;
+						    background: #7e9599;
 						}
-	                </style>
-		            <span class="close black"></span>
-		            <!-- Texto do light box -->
-		            <p class="ho-text">{{d.texto}}</p>
-		            
-		            <!-- Número de passos do light box -->
-		            <style type="text/css">
-		                .ho-tip-step{
-		                    color:#a1a1a1;
-		                    font-size: 12px;
-		                }
-		            </style>
-		            <span class="ho-tip-step">Passo {{d.step}} de {{d.stepTotal}}</span>
-		            
-		            <!-- Botão da esquerda (Anterior) -->  
-		            <paper-button raised role="button" class="colored colored--gray" style="display:{{d.display}}" tabindex="0" dismissive>
-		              <span class="chevron left"></span>  
-		              <span>{{d.btPrevious}}</span>
-		            </paper-button>
+						span.close::before {
+						    transform: rotate(45deg);
+						}
+						span.close::after {
+						    transform: rotate(-45deg);
+						  }
+						span.close.black {
+						    span.close::before, span.close::after {
+						      height: 8px;
+						      margin-top: -4px;
+						    }
+						}
+					}
+                </style>
+	            <span class="close black"></span>
+	            <!-- Texto do light box -->
+	            <p class="ho-text">{{d.texto}}</p>
+	            
+	            <!-- Número de passos do light box -->
+	            <style type="text/css">
+	                .ho-tip-step{
+	                    color:#a1a1a1;
+	                    font-size: 12px;
+	                }
+	            </style>
+	            <span class="ho-tip-step">Passo {{d.step}} de {{d.stepTotal}}</span>
+	            
+	            <!-- Botão da esquerda (Anterior) -->  
+	            <paper-button raised role="button" class="colored colored--gray" style="display:{{d.display}}" tabindex="0" dismissive>
+	              <span class="chevron left"></span>  
+	              <span>{{d.btPrevious}}</span>
+	            </paper-button>
 
-		            <!-- Botão da direita (Próximo) -->
-		            <paper-button raised role="button" class="colored colored--orange" tabindex="0" affirmative>
-		              <span>{{d.btNext}}</span>
-		              <span class="chevron right"></span>
-		          	</paper-button>
+	            <!-- Botão da direita (Próximo) -->
+	            <paper-button raised role="button" class="colored colored--orange" tabindex="0" affirmative>
+	              <span>{{d.btNext}}</span>
+	              <span class="chevron right"></span>
+	          	</paper-button>
 
-		        </paper-action-dialog>
-	        </template>
-	    </div>
+	        </paper-action-dialog>
+        </template>
     </template>
     <script>
         Polymer('ho-tutorial-light-box', {
