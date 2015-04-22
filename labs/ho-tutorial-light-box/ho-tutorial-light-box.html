@@ -2,9 +2,21 @@
 <link rel="import" href="../../components/paper-dialog/paper-action-dialog.html">
 
 <polymer-element name="ho-tutorial-light-box" attributes="name">
+    
+	<style>
+	    html /deep/ paper-action-dialog::shadow #scroller {
+		    width: 300px;
+		    text-align: center;
+		    font-family: sans-serif;
+		}
+		html /deep/ paper-action-dialog::shadow #actions {
+		    margin:0 auto;
+		}
+	</style>
     <template>
     	<div layout horizontal center>
 	    	<template repeat="{{d in dialog}}">
+		    	
 		    	<paper-action-dialog heading="{{d.title}}" opened >
 		            <style type="text/css">
 		                paper-button[raised].colored{
