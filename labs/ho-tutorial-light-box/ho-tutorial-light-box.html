@@ -7,7 +7,6 @@
 	    html /deep/ paper-action-dialog::shadow #scroller {
 		    width: 300px;
 		    text-align: center;
-		    font-family: sans-serif;
 		}
 		html /deep/ paper-action-dialog::shadow #scroller h1{
 		    text-transform: uppercase;
@@ -23,18 +22,35 @@
 	                paper-button[raised].colored{
                         color:white;
                         padding: 15px;
-                        font-size: 14px;
+                        font-size: 13px;
                         border-radius: 2px;
-                        margin: 5px;
                         cursor: pointer;
                     }
+                    paper-button[raised].colored .ho-btn-concluded{
+                        font-size: 15px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
                     paper-button[raised].colored.colored--orange{
+                        background-color: #ff8400;
+                        border-color: #ff8400;
+                        margin-left: 25px;
+                    }
+                    paper-button[raised].colored.colored--orange:hover{
                         background-color: #fc7800;
                         border-color: #fc7800;
+                    }
+                    paper-button[raised].colored.colored--orange.ho-btn-next{
+                        margin-left: 0;
                     }
                     paper-button[raised].colored.colored--gray{
                         background-color: #70797F;
                         border-color: #70797F;
+                        margin-right: 25px;
+                    }
+                    paper-button[raised].colored.colored--gray:hover{
+                        background-color: #9aa3a9;
+                        border-color: #9aa3a9;
                     }
                     paper-button[raised].colored .chevron::before {
                         border-style: solid;
@@ -111,9 +127,11 @@
 						}
 					}
                 </style>
+	            <!-- Icon close -->
 	            <span class="close black"></span>
+	            
 	            <!-- Texto do light box -->
-	            <p class="ho-text">{{d.texto}}</p>
+	            <p class="ho-text">{{d.text}}</p>
 	            
 	            <!-- Número de passos do light box -->
 	            <style type="text/css">
@@ -124,18 +142,24 @@
 	            </style>
 	            <span class="ho-tip-step">Passo {{d.step}} de {{d.stepTotal}}</span>
 	            
-	            <!-- Botão da esquerda (Anterior) -->  
-	            <paper-button raised role="button" class="colored colored--gray" style="display:{{d.display}}" tabindex="0" dismissive>
-	              <span class="chevron left"></span>  
-	              <span>{{d.btPrevious}}</span>
-	            </paper-button>
-
-	            <!-- Botão da direita (Próximo) -->
-	            <paper-button raised role="button" class="colored colored--orange" tabindex="0" affirmative>
-	              <span>{{d.btNext}}</span>
-	              <span class="chevron right"></span>
-	          	</paper-button>
-
+	            <!-- Botões actions / tratamento -->
+	            <template if="{{d.type !== 'first'}}">
+		            <paper-button raised role="button" class="colored colored--gray" tabindex="0" dismissive>
+		              <span class="chevron left"></span>  
+		              <span>Anterior</span>
+		            </paper-button>
+	            </template>
+	            
+	            <paper-button raised role="button" class="colored colored--orange {{d.btnNext}}" tabindex="0" affirmative>
+	              <template if="{{d.type !== 'last'}}">
+		              <span>Próximo</span>
+		              <span class="chevron right"></span>
+	          	  </template>
+	          	  <template if="{{d.type === 'last'}}">
+		              <span class="ho-btn-concluded">Concluir</span>
+	          	  </template>
+	          	</paper-button>	
+	            
 	        </paper-action-dialog>
         </template>
     </template>
@@ -145,8 +169,12 @@
             aProp: false,
             ready: function() {
                 this.dialog = [
-                   {title:'Listas', texto:'Encontre os produtos que você salvou, organizados nas suas listas, que podem ser públicas ou privadas.', btNext: 'Próximo', btPrevious: 'Anterior', step: '1', stepTotal: '6', display: "none !important"},
-                   {title:'Listas 2', texto:'Encontre os produtos que você salvou, organizados.', btNext: 'Próximo', btPrevious: 'Anterior', step: '2', stepTotal: '6', display: "block !important"}
+                   {type: 'first',title:'Listas', text:'Encontre os produtos que você salvou, organizados nas suas listas, que podem ser públicas ou privadas.', step: '1', stepTotal: '6', btnNext: 'ho-btn-next'},
+                   {type: 'middle',title:'Listas 2', text:'Encontre os produtos que você salvou, organizados.', step: '2', stepTotal: '6'},
+                   {type: 'middle',title:'Listas 2', text:'Encontre os produtos que você salvou, organizados.', step: '3', stepTotal: '6'},
+                   {type: 'middle',title:'Listas 2', text:'Encontre os produtos que você salvou, organizados.', step: '4', stepTotal: '6'},
+                   {type: 'middle',title:'Listas 2', text:'Encontre os produtos que você salvou, organizados. ncontre os produtos que você salvou, organizados nas suas', step: '5', stepTotal: '6'},
+                   {type: 'last',title:'Listas 2', text:'Organizados. PARABÉNS', step: '6', stepTotal: '6'}
                ];
             }
         });
