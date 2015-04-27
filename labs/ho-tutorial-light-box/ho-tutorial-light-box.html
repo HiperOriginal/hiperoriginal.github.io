@@ -3,7 +3,7 @@
 
 <polymer-element name="ho-tutorial-light-box" attributes="name">
     
-	<style>
+	<style shim-shadowdom>
 	    html /deep/ paper-action-dialog::shadow #scroller {
 		    width: 300px;
 		    text-align: center;
@@ -18,8 +18,7 @@
 	</style>
     <template>
     	<template repeat="{{d in dialog}}">
-	    	
-	    	<paper-action-dialog heading="{{d.title}}" opened >
+	    	<paper-action-dialog heading="{{d.title}}" opened>
 	            <style type="text/css">
 	                paper-button[raised].colored{
                         color:white;
