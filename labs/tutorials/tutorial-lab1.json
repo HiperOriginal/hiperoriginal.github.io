@@ -1,0 +1,23 @@
+{
+  "config": {
+    "texts": {
+      "next": "avançar",
+      "back": "voltar",
+      "abort": "cancelar",
+      "finish": "concluir",
+      "moreInfo": "mais informações",
+      "of": "de",
+      "step": "passo"
+    }
+  },
+  "steps": [
+    {
+      "heading": "Título do passo1",
+      "description": "Descrição do passo1"
+    },
+    {
+      "heading": "Título do passo2",
+      "description": "Descrição do passo2"
+    }
+  ]
+}

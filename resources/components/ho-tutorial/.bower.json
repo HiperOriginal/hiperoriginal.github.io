@@ -1,0 +1,45 @@
+{
+  "name": "ho-tutorial",
+  "version": "0.1.3",
+  "homepage": "https://github.com/HiperOriginal/ho-tutorial",
+  "authors": [
+    "Leo Batista <leobatista021@gmail.com>"
+  ],
+  "description": "Displays a floating step by step tutorial linked to interface elements.",
+  "main": "ho-tutorial.html",
+  "keywords": [
+    "HiperOriginal",
+    "ho",
+    "tutorial",
+    "web-component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.5.5",
+    "core-icons": "core-icons#~0.5.5",
+    "core-icon-button": "core-icon-button#~0.5.5",
+    "paper-dialog": "paper-dialog#~0.5.5",
+    "paper-button": "paper-button#~0.5.5",
+    "dynamic-backdrop": "~1.2.2"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  },
+  "_release": "0.1.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.3",
+    "commit": "c229f98caa67556d24061309d6d512a91ecce9fd"
+  },
+  "_source": "git://github.com/Hiperoriginal/ho-tutorial.git",
+  "_target": "~0.1.3",
+  "_originalSource": "Hiperoriginal/ho-tutorial",
+  "_direct": true
+}
