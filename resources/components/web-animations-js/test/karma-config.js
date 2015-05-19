@@ -9,7 +9,7 @@ module.exports = function(config) {
     ],
     browsers: ['Firefox'],
     // browsers: ['Safari', 'Chrome', 'ChromeCanary', 'Firefox', 'IE'],
-    basePath: '../',
+    basePath: '..',
     files: [
       // Populated in `grunt test` task.
     ],
